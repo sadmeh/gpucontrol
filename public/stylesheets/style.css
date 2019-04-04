@@ -1,0 +1,19 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+tr.giga-miner{
+  background-color: #fcf8e3 !important;
+
+}
+
+tr.giga-aurus{
+  background-color: #cefcd4 !important;
+
+}
+tr.msi-miner{
+  background-color: #fcdffb !important;
+
+}
+

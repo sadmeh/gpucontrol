@@ -1,0 +1,17 @@
+extends layout
+
+block content
+  button(id='get-status',class='btn btn-primary') get status
+  div
+    table(class="table")
+      thead
+        tr
+          th id
+          th temp
+          th fan
+          th watt
+          th bios ver
+        tbody(id='all-gpu-state')
+
+
+  script(src='/javascripts/index.js')
