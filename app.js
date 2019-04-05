@@ -41,9 +41,10 @@ app.use(function(err, req, res, next) {
 });
 
 const checkStateInterval = require('./modules/checkStateInterval');
-const db = require('./modules/db');
-db.createDb();
-setInterval(checkStateInterval, 10000);
+// const db = require('./modules/db');
+// db.createDb();
+// setInterval(checkStateInterval, 10000);
+
 
 
 module.exports = app;

@@ -1,5 +1,6 @@
 var MongoClient = require('mongodb').MongoClient;
 var url = "mongodb://localhost:27017/gpucontrol";
+const lodash = require("lodash");
 
 var db = {
     createDb(){
@@ -26,5 +27,18 @@ var db = {
         });
 
     },
+    async fetchLastStatus(graphicIndex, count, callback){
+        let command;
+
+       MongoClient.connect(url, async function(err, db) {
+            if (err) throw err;
+            var dbo = db.db("gpucontrol");
+            command = dbo.collection('status').find({}).sort({timestamp:-1}).limit(count);
+            command.toArray(function (err, data) {
+               callback( lodash.map(data, `gpu[${graphicIndex}]`));
+            });
+        });
+
+    }
 };
 module.exports = db;
